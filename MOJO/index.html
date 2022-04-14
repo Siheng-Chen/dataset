@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="MOJO is a solution to stochastic motion prediction of expressive 3D bodies.">
+      <meta name="author" content="Yan Zhang">
+      <title>We are More than Our Joints: Predicting How 3D Bodies Move</title>
+      <meta property="og:title" content="[CVPR 2021] We are More than Our Joints: Predicting How 3D Bodies Move" />
+      <meta property="og:description" content="MOJO is a solution to stochastic motion prediction of expressive 3D bodies.">
+      <meta property="og:image" content="https://yz-cnsdqz.github.io/eigenmotion/MOJO/images/MOJO-teaser.jpg" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="[CVPR 2021] We are More than Our Joints: Predicting How 3D Bodies Move" />
+      <meta name="twitter:description" content="MOJO is a solution to stochastic motion prediction of expressive 3D bodies." />
+      <meta name="twitter:image" content="https://yz-cnsdqz.github.io/eigenmotion/MOJO/images/MOJO-teaser.jpg" />
+      <meta name="twitter:image:alt" content="MOJO CVPR 2021" />
+      <!-- Bootstrap core CSS -->
+      <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Custom styles for this template -->
+      <link href="css/scrolling-nav.css" rel="stylesheet">
+      <!-- nice figures  -->
+      <link rel="stylesheet" href="css/font-awesome.css">
+      <link rel="icon" type="image/png" href="images/favicon.png">
+
+   </head>
+   <body id="page-top">
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+         <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">MOJO</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#video">Video</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#code">Code</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#pubs">Citation</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <header class="bg-light text-black">
+         <div class="container text-center">
+            <h1>We are More than Our Joints </h1>
+            <h2>Predicting How 3D Bodies Move</h2>
+            <!-- <br> -->
+            <p class="lead">
+               <i>"We are more than our joints", or MOJO for short, is a solution to stochastic 
+                  motion prediction of expressive 3D bodies. 
+                  Given a short motion from the past, MOJO generates diverse plausible motions 
+                  in the near future. 
+               </i>
+            </p>
+         </div>
+      </header>
+      <section id="about" class="about-section">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <div class="img-wide text-center">
+                     <!-- <p><img class="img-fluid" alt="teaser" src="https://via.placeholder.com/1500x600"></p> -->
+                     <p><img class="img-fluid" alt="teaser" src="images/MOJO-teaser.jpg"></p>
+                  </div>
+                  <br><br>
+                  <h3>Abstract</h3>
+                  <p class="lead text-justify">
+                     A key step towards understanding human behavior is the prediction of 3D human motion. 
+                     Successful solutions have many applications in human tracking, HCI, and graphics. 
+                     Most previous work focuses on predicting a time series of future 3D joint locations given a sequence 3D joints from the past. 
+                     This Euclidean formulation generally works better than predicting pose in terms of joint 
+                     rotations. Body joint locations, however, do not fully constrain 3D human pose, leaving degrees 
+                     of freedom (like rotation about a limb) undefined, making it hard to animate a realistic human 
+                     from only the joints. Note that the 3D joints can be viewed as a sparse point cloud. 
+                     Thus the problem of human motion prediction can be seen as a problem of point cloud prediction. 
+                     With this observation, we instead predict a sparse set of locations on the body surface that 
+                     correspond to motion capture markers. Given such markers, we fit a parametric body model to 
+                     recover the 3D body shape and pose of the person. These sparse surface markers also carry detailed 
+                     information about human movement that is not present in the joints, increasing the 
+                     naturalness of the predicted motions. Using the AMASS dataset, 
+                     we train MOJO (More than Our JOints), which is a novel variational autoencoder 
+                     with a latent DCT space that generates motions from latent frequencies. 
+                     MOJO preserves the full temporal resolution of the input motion, and sampling from the 
+                     latent frequencies explicitly introduces high-frequency components into the generated motion. 
+                     We note that motion prediction methods accumulate errors over time, resulting in joints or markers 
+                     that diverge from true human bodies. To address this, we exploit the body model and fit SMPL-X 
+                     to the predictions at each time step, projecting the solution back onto the space of valid bodies. 
+                     These valid markers are then propagated in time. Quantitative and qualitative experiments 
+                     show that our approach produces state-of-the-art results and realistic 3D body animations. 
+                  </p>
+
+                  <!-- <h4>Use-case</h4> -->
+                  <br> <br>
+                  <p class="lead text-justify">
+                     MOJO in a nutshell:
+                     <ul>
+                        <li><b>A body surface marker-based representation.</b>
+                        Compared to joint locations, body surface markers contain richer information of 
+                        the body shape, and provide more body degree-of-freedom constraints. Compared to 
+                        joint rotations, markers are located in the Euclidean space, which are easier for neural networks to learn.
+                        </li>
+                        <li><b>A conditional VAE with latent frequencies.</b>
+                        With latent frequencies, the generated motion has more high-frequency components and hence looks
+                        more realistic. Boosted by <a href="https://github.com/Khrylx/DLow" >DLow</a> as an advanced sampler 
+                        in the latent space, MOJO produces highly diverse future motions based on the same motion seed.
+                        </li>
+                        <li><b>A recursive marker reprojection scheme.</b>
+                        This scheme is to recover the body meshes from the generated markers during testing.
+                        After reprojecting the markers to the mesh template at each time step, it always keeps 
+                        the markers in the valid body space, and hence can eliminate error accumulation of the recurrent network.
+                        </li>
+                      </ul>
+                  </p>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section id="video" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <h2 class="section-title-tc">Video</h2>
+                  <!-- <p class="lead text-justify"><a class="publink" >Coming soon ...</a></p> -->
+                  <!-- 16:9 aspect ratio -->
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/5DqLWAb37X0" title="[CVPR 2021] We are More than Our Joints: Predicting How 3D Bodies Move" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+
+               </div>
+            </div>
+         </div>
+      </section>
+      <section id="code" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <h2 class="section-title-tc">
+                    <a class="publink" href="https://github.com/yz-cnsdqz/MOJO-release" target="_blank" style="text-decoration: none">Code <i class="fa fa-github"></i></a>
+                  </h2>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section id="pubs" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <h2 class="section-title-tc">Citation</h2>
+                  <br>
+                  Yan Zhang, Michael J. Black,  Siyu Tang<br>
+                  <a class="publink" target="_blank" href="https://arxiv.org/pdf/2012.00619.pdf"><b>
+                  We are More than Our Joints: Predicting how 3D Bodies Move</b><br></a>
+                    In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2021
+                  <br><br>
+<pre style="display: block; background-color: #f5f5f5; border: 1px solid #ccc; border-radius: 4px">
+   @inproceedings{zhang2021mojo,
+      title={We are More than Our Joints: Predicting how 3D Bodies Move},
+      author={Zhang, Yan and Black, Michael J and Tang, Siyu},
+      booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+      pages={3372--3382},
+      year={2021}
+    }</pre>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section id="team" class="team-section">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <h2 class="section-title-tc">Team</h2>
+                  <div class="row">
+                     
+
+                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                        <div class="mainflip">
+                              <div class="card">
+                                 <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="images/avatars/cropped/yan.jpg" alt="card image"></p>
+                                    <h4 class="card-title">Yan <br> Zhang</h4>
+                                    <ul class="list-inline">
+                                      <li class="list-inline-item">
+                                         <a class="social-icon text-xs-center" target="_blank" href="https://twitter.com/cnsdqzyz">
+                                         <i class="fa fa-twitter"></i>
+                                         </a>
+                                      </li>
+                                       <li class="list-inline-item">
+                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.linkedin.com/in/yan-zhang-3119b11a/">
+                                          <i class="fa fa-linkedin"></i>
+                                          </a>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                        </div>
+                     </div>
+
+                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                        <div class="mainflip">
+                              <div class="card">
+                                 <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="images/avatars/cropped/michael.jpg" alt="card image"></p>
+                                    <h4 class="card-title">Michael J. Black</h4>
+                                    <ul class="list-inline">
+                                      <li class="list-inline-item">
+                                         <a class="social-icon text-xs-center" target="_blank" href="https://twitter.com/Michael_J_Black">
+                                         <i class="fa fa-twitter"></i>
+                                         </a>
+                                      </li>
+                                       <li class="list-inline-item">
+                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.linkedin.com/in/michael-j-black-41751114/">
+                                          <i class="fa fa-linkedin"></i>
+                                          </a>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                        </div>
+                     </div>
+
+                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                        <div class="mainflip">
+                              <div class="card">
+                                 <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="images/avatars/cropped/siyu.jpg" alt="card image"></p>
+                                    <h4 class="card-title">Siyu <br> Tang</h4>
+                                    <ul class="list-inline">
+                                      <li class="list-inline-item">
+                                         <a class="social-icon text-xs-center" target="_blank" href="https://twitter.com/SiyuTang3">
+                                         <i class="fa fa-twitter"></i>
+                                         </a>
+                                      </li>
+                                       <li class="list-inline-item">
+                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.linkedin.com/in/siyu-tang-06875324/">
+                                          <i class="fa fa-linkedin"></i>
+                                          </a>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Footer -->
+      <footer class="py-5 bg-dark">
+         <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; MOJO 2021</p>
+         </div>
+         <!-- /.container -->
+      </footer>
+      <!-- Bootstrap core JavaScript -->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- Plugin JavaScript -->
+      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+      <!-- Custom JavaScript for this theme -->
+      <script src="js/scrolling-nav.js"></script>
+   </body>
+</html>
