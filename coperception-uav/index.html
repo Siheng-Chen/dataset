@@ -28,7 +28,7 @@
       <!-- Navigation -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
          <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">GAMMA</a>
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">CoPerception-UAV</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -38,16 +38,16 @@
                      <a class="nav-link js-scroll-trigger" href="#about">About</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link js-scroll-trigger" href="#video">Video</a>
+                     <a class="nav-link js-scroll-trigger" href="#data">Data</a>
                   </li>
                   <!-- <li class="nav-item">
                      <a class="nav-link js-scroll-trigger" href="#downloads">Downloads</a>
                   </li> -->
                   <li class="nav-item">
-                     <a class="nav-link js-scroll-trigger" href="#pubs">Citation</a>
+                     <a class="nav-link js-scroll-trigger" href="#tutorial">Tutorial</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link js-scroll-trigger" href="#acknowledgement">Acknowledgement</a>
+                     <a class="nav-link js-scroll-trigger" href="#download">Download</a>
                   </li>
                   <li class="nav-item">
                      <a class="nav-link js-scroll-trigger" href="#team">Team</a>
@@ -58,21 +58,19 @@
       </nav>
       <header class="bg-light text-black">
          <div class="container text-center">
-            <h1>The Wanderings of Odysseus in 3D Scenes </h1>
+            <h1>CoPerception-UAV: A Virtual Collaborative Perception Dataset for UAVs </h1>
             <!-- <br> -->
             <p class="lead">
-               <i> We propose <b>GAMMA</b>,
-                  an automatic and scalable solution, to populate the 3D scene with diverse digital humans. The digital humans have 
-                  1) varied body shapes, 
-                  2) realistic and perpetual motions to reach goals, and 
-                  3) plausible body-ground contact.
+               <i> We propose <b>CoPerception-UAV</b>,
+                  the first comprehensive dataset for UAV-based collaborative perception. 
                </i>
             </p>
 
             <div class="downloads">
                <br><h3>
-               <a class="publink" href="https://drive.google.com/file/d/1FgKHlwehR8RGZuaW5syWn7DP8E5UQz1b/view?usp=sharing" target="_blank" style="text-decoration: none"> Paper <i class="fa fa-print"></i></a> &nbsp;
-               <a class="publink" href="" target="_blank" style="text-decoration: none"> Code (coming soon) <i class="fa fa-github"></i></a> &nbsp;
+               <a class="publink" href="" target="_blank" style="text-decoration: none"> Paper <i class="fa fa-print"></i></a> &nbsp;
+               <a class="publink" href="" target="_blank" style="text-decoration: none"> Download <i class="fa fa-github"></i></a> &nbsp;
+               <a class="publink" href="" target="_blank" style="text-decoration: none"> Code <i class="fa fa-github"></i></a> &nbsp;
                <h3>
            </div>
          </div>
@@ -84,54 +82,51 @@
          <div class="container">
             <div class="row">
                <div class="col-lg-10 mx-auto">
-                  <div class="img-wide text-center">
-                     <!-- <p><img class="img-fluid" alt="teaser" src="https://via.placeholder.com/1500x600"></p> -->
-                     <p><img class="img-fluid" alt="teaser" src="images/GAMMA-teaser.jpg"></p>
-                  </div>
-                  <br><br>
-                  <h4>Abstract</h4>
+                  <h2>About CoPerception-UAV</h2>
                   <p class="lead text-justify">
-                     Our goal is to populate digital environments, in which the digital humans have diverse body shapes, move perpetually, and have plausible body-scene contact. The core challenge is to generate realistic, controllable, and infinitely long motions for diverse 3D bodies. To this end, we propose generative motion primitives via body surface markers, shortened as GAMMA. In our solution, we decompose the long-term motion into a time sequence of motion primitives. We exploit body surface markers and conditional variational autoencoder to model each motion primitive, and generate long-term motion by implementing the generative model recursively. To control the motion to reach a goal, we apply a policy network to explore the model latent space, and use a tree-based search to preserve the motion quality during testing. Experiments show that our method can produce more realistic and controllable motion than state-of-the-art data-driven method. With conventional path-finding algorithms, the generated human bodies can realistically move in the scene for a long distance and a long time.
+                     Coperception-UAV is the first comprehensive dataset for UAV-based collaborative perception.<br>
+                     A UAV swarm has the potential to distribute tasks and achieve better, faster, and more robust performances than a single UAV. Recently, planning and control of a UAV swarm have been intensively studied; however, the collaborative perception remains under-explored due to the lack of a comprehensive dataset. This work aims to fill this gap and proposes a collaborative perception dataset for UAV swarm. <br>
+                     Based on the co-simulation platform of AirSim and CARLA, our dataset consists of 131.9k synchronous images collected from 5 coordinated UAVs flying at 3 altitudes over 3 simulated towns with 2 swarm formations. Each image is fully annotated with the pixel-wise semantic segmentation labels and 2D/3D bounding boxes of vehicles. We further build a benchmark on the proposed dataset by evaluating a variety of related multi-agent collaborative methods on multiple perception tasks, including object detection, semantic segmentation, and bird's eye-view (BEV) semantic segmentation. 
                   </p>
-                  <br><br>
-                  <hr>
-                  <h4>Use case: How to navigate a body mesh in a 3D scene?</h4>
-                  Let's assume that we have a virtual environment of 40x40 squaremeters with obstacles (cyan blocks).
-                  <div class="img-wide text-center">
-                     <!-- <p><img class="img-fluid" alt="teaser" src="https://via.placeholder.com/1500x600"></p> -->
-                     <p><img class="img-fluid" alt="teaser" width="50%" src="images/GAMMAUse-scene.jpg"></p>
+
+                  <video width="80%" height="auto"  controls > 
+                     <source type="video/mp4" src="images/vis.mp4"/> 
+                 </video>
+                 <br><br>
+                 <hr>
+
+                 <h3>Swarm Arrangement</h3>
+                 We arrange two types of formation modes for a UAV swarm: 
+                 discipline mode, where the swarm keeps a consistent and relatively static array, 
+                 and dynamic mode, where each UAV navigates independently in the scene.
+
+                 <div class="img-wide text-center">
+                  <!-- <p><img class="img-fluid" alt="teaser" src="https://via.placeholder.com/1500x600"></p> -->
+                  <p><img class="img-fluid" alt="teaser" width="70%" src="images/formation.png"></p>
                   </div>
 
-                  <h5>Step 1: bake a navigation mesh</h5>
-                  This step can either be completed by blender, or other game engines like Unity3D or Unreal. 
-                  Note that margins around the blocks are specified to avoid collision.
-                  <div class="img-wide text-center">
-                     <!-- <p><img class="img-fluid" alt="teaser" src="https://via.placeholder.com/1500x600"></p> -->
-                     <p><img class="img-fluid" alt="teaser" width="50%" src="images/GAMMAUse-navimesh.png"></p>
+                  <br><br>
+                 <hr>
+
+                  <h3>Sensor Setup</h3>
+                  In the UAV swarm, Each UAV is equipped with 5 RGB cameras in 5 directions and 5 semantic cameras collecting semantic ground truth for RGB cameras.<br>
+                  - 90° horizontal FoV<br>
+                  - 1 bird's eye view camera and 4 cameras facing forward, backward, right, and left with a pitch degree of -45◦<br>
+                  - image size: 800x450 pixels<br>
+
+                  <p><img class="img-fluid" alt="teaser" width="70%" src="images/sensor.png"></p>
                   </div>
-                  <h5>Step 2: randomly choose a walking path</h5>
-                  Based on the navigation mesh, we can use path-finding algorithms, e.g. A*, to produce walking paths, which are in terms of a set of waypoints.
-                  In our example, we specify a random starting location, a random ending location, and produce the path using <a href="https://github.com/yz-cnsdqz/NavTrimesh">this repo</a>.
-                  <div class="img-wide text-center">
-                     <!-- <p><img class="img-fluid" alt="teaser" src="https://via.placeholder.com/1500x600"></p> -->
-                     <p><img class="img-fluid" alt="teaser" width="85%" src="images/GAMMAUse-pathfinding.png"></p>
-                  </div>
-                  
-                  <h5>Step 3: place a random body mesh at the starting location, and run GAMMA</h5>
-                  On the starting location, we place a <a href="https://smpl-x.is.tue.mpg.de">SMPL-X</a> body mesh that faces the next target.
-                  The body mesh is either male or female. The first 10 body shape parameters are randomly sampled from N(0,I), and the body pose
-                  is randomly sampled from <a href="https://github.com/nghorbani/human_body_prior">VPoser</a>.
-                  Afterwards, we can obtain the results shown in the videos below.
-                  <hr>
+
+
+
                </div>
                
             </div>
          </div>
-
       </section>
 
 
-      <section id="video" class="">
+      <section id="data" class="">
          <div class="container">
             <div class="row">
                <div class="col-lg-10 mx-auto">
@@ -180,7 +175,7 @@
 
 
 
-      <section id="pubs" class="">
+      <section id="tutorial" class="">
          <div class="container">
             <div class="row">
                <div class="col-lg-10 mx-auto">
@@ -203,7 +198,7 @@
          </div>
       </section>
 
-      <section id="acknowledgement" class="">
+      <section id="download" class="">
          <div class="container">
             <div class="row">
                <div class="col-lg-10 mx-auto">
