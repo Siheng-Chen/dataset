@@ -114,7 +114,7 @@
                   - 1 bird's eye view camera and 4 cameras facing forward, backward, right, and left with a pitch degree of -45◦<br>
                   - image size: 800x450 pixels<br>
 
-                  <p><img class="img-fluid" alt="teaser" width="70%" src="images/sensor.png"></p>
+                  <p><img class="img-fluid" alt="teaser" width="50%" src="images/sensor.png"></p>
                   </div>
 
 
@@ -130,29 +130,33 @@
          <div class="container">
             <div class="row">
                <div class="col-lg-10 mx-auto">
-                  <h2 class="section-title-tc">Video</h2>
-                  <br> <br>
-                  <video width="100%" height="auto"  controls > 
-                     <source type="video/mp4" src="images/results_in_cubes_individual.mp4" /> 
-                 </video>
-               
-                 <br> <br>
-                  <video width="100%" height="auto" controls> 
-                     <source type="video/mp4" src="images/results_in_cubes_all.mp4" /> 
-                 </video>
-                  <!-- <p class="lead text-justify"><a class="publink" >Coming soon ...</a></p> -->
-                  <!-- 16:9 aspect ratio -->
-                  <br> <br>
-                  A demonstration video with music.
-                  If it does not play in Safari, please follow <a href='https://discussions.apple.com/thread/252015568'> this link </a> to change the privacy setting.
-                  <!-- <video width="100%" height="auto" controls> 
-                     <source type="video/mp4" src="images/GAMMA-demo-v3.mp4" /> 
-                 </video> -->
-                 <iframe src="https://drive.google.com/file/d/1AYWgohlXz_j0gkFWceNHM4nJjocieDre/preview" width="100%" height="480" allow="autoplay">
-                 </iframe>
-                  <!-- <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/5DqLWAb37X0" title="[arXiv 2021] The Wanderings of Odysseus in 3D Scenes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                  </div> -->
+                  <h2 class="section-title-tc">Data Annotations</h2>
+                  <br>
+                  Fully-annotated data are provided in the dataset, including synchronous images with pixel-wise semantic labels, 2D & 3D bounding boxes of vehicles, and BEV semantic map.
+                  <br><br>
+                  <hr>
+
+                  <div class="img-wide text-center">
+                     <!-- <p><img class="img-fluid" alt="teaser" src="https://via.placeholder.com/1500x600"></p> -->
+                     <p><img class="img-fluid" alt="teaser" width="80%" src="images/sample.png"></p>
+                     </div>
+
+                  <h3>Camera data</h3>
+                  We collect synchronous images from all cameras on 5 UAVs, which is 25 images in a sample. In total, 123.8K images are collected for the discipline swarm mode and 8.1K for the dynamic swarm mode. We provide semantic label for each image.
+                  <br><br>
+                  <hr>
+
+                  <h3>Bounding boxes</h3>
+                  3D bounding boxes of vehicles are recorded at the same moment with images, including location (x, y, z), rotation (w, x, y, z in quaternion) in the global coordinate and their length, width and height. <br>
+                  To specifically address the occlusion issue, we also provide a binary label for the occlusion status of each bounding box.
+                  <br><br>
+                  <hr>
+
+                  <h3>BEV semantic label</h3>
+                  We provide BEV segmentation labels of four categories: roadway, building, vehicle, and others, which are the key elements to construct the layout of a city and foreground objects. The resolution of the BEV map is 0.25mx0.25m.
+                  <br><br>
+                  <hr>
+
 
                </div>
             </div>
@@ -179,20 +183,13 @@
          <div class="container">
             <div class="row">
                <div class="col-lg-10 mx-auto">
-                  <h2 class="section-title-tc">Citation</h2>
+                  <h2 class="section-title-tc">Tutorial</h2>
                   <br>
-                  Yan Zhang,  Siyu Tang<br>
-                  <a class="publink" target="_blank" href="https://drive.google.com/file/d/1FgKHlwehR8RGZuaW5syWn7DP8E5UQz1b/view"><b>
-                  The Wanderings of Odysseus in 3D Scenes</b><br></a>
-                    CVPR, 2022
-                  <br><br>
-<pre style="display: block; background-color: #f5f5f5; border: 1px solid #ccc; border-radius: 4px">
-@misc{zhang2021wanderings,
-    title={The Wanderings of Odysseus in 3D Scenes},
-    author={Zhang, Yan and Tang, Siyu},
-    booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-    year={2022},
-}</pre>
+                  The dataset is organized in a similar way with the widelyused autonomous driving dataset, nuScenes; so it can be used directly with the well-established nuScenes-devkit.
+                  <div class="img-wide text-center">
+                     <!-- <p><img class="img-fluid" alt="teaser" src="https://via.placeholder.com/1500x600"></p> -->
+                     <p><img class="img-fluid" alt="teaser" width="80%" src="images/tutorial.png"></p>
+                     </div>
                </div>
             </div>
          </div>
@@ -202,9 +199,8 @@
          <div class="container">
             <div class="row">
                <div class="col-lg-10 mx-auto">
-                  <h2 class="section-title-tc">Acknowledgement</h2>
-                  We appreciate <a href="https://gramaziokohler.arch.ethz.ch">Gramazio Kohler Research</a> to provide architecture CAD models for experiments.
-                  Visualizations of body motions are largely based on <a href="https://smpl-x.is.tue.mpg.de">the SMPL-X blender add-on</a>.
+                  <h2 class="section-title-tc">Download</h2>
+                  
             </div>
          </div>
       </section>
@@ -216,52 +212,7 @@
                   <h2 class="section-title-tc">Team</h2>
                   <div class="row">
 
-                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                        <div class="mainflip">
-                              <div class="card">
-                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="images/avatars/cropped/yan.jpg" alt="card image"></p>
-                                    <h4 class="card-title">Yan <br> Zhang</h4>
-                                    <ul class="list-inline">
-                                      <li class="list-inline-item">
-                                         <a class="social-icon text-xs-center" target="_blank" href="https://twitter.com/cnsdqzyz">
-                                         <i class="fa fa-twitter"></i>
-                                         </a>
-                                      </li>
-                                       <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.linkedin.com/in/yan-zhang-3119b11a/">
-                                          <i class="fa fa-linkedin"></i>
-                                          </a>
-                                       </li>
-                                    </ul>
-                                 </div>
-                              </div>
-                        </div>
-                     </div>
-
-
-                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                        <div class="mainflip">
-                              <div class="card">
-                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="images/avatars/cropped/siyu.jpg" alt="card image"></p>
-                                    <h4 class="card-title">Siyu <br> Tang</h4>
-                                    <ul class="list-inline">
-                                      <li class="list-inline-item">
-                                         <a class="social-icon text-xs-center" target="_blank" href="https://twitter.com/SiyuTang3">
-                                         <i class="fa fa-twitter"></i>
-                                         </a>
-                                      </li>
-                                       <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.linkedin.com/in/siyu-tang-06875324/">
-                                          <i class="fa fa-linkedin"></i>
-                                          </a>
-                                       </li>
-                                    </ul>
-                                 </div>
-                              </div>
-                        </div>
-                     </div>
+                     
                   </div>
                </div>
             </div>
