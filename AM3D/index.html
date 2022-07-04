@@ -5,13 +5,13 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="description" content="GAMMA is a solution to animating diverse 3D bodies.">
       <meta name="author" content="Yan Zhang">
-      <title>CoPerception-UAV</title>
-      <meta property="og:title" content="[arXiv 2021] The Wanderings of Odysseus in 3D Scenes" />
+      <title>AM3D</title>
+      <meta property="og:title" content="Aerial Monocular 3D Object Detection" />
       <meta property="og:description" content="GAMMA is a solution to animating 3D bodies.">
       <meta property="og:image" content="https://yz-cnsdqz.github.io/eigenmotion/GAMMA/images/GAMMA-teaser.jpg" />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="[arXiv 2021] The Wanderings of Odysseus in 3D Scenes" />
+      <meta name="twitter:title" content="Aerial Monocular 3D Object Detection" />
       <meta name="twitter:description" content="GAMMA is a solution to animating 3D bodies." />
       <meta name="twitter:image" content="https://yz-cnsdqz.github.io/eigenmotion/GAMMA/images/GAMMA-teaser.jpg" />
       <meta name="twitter:image:alt" content="GAMMA arXiv 2021" />
@@ -28,7 +28,7 @@
       <!-- Navigation -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
          <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">CoPerception-UAV</a>
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">AM3D</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -58,10 +58,10 @@
       </nav>
       <header class="bg-light text-black">
          <div class="container text-center">
-            <h1>CoPerception-UAV </h1>
+            <h1>AM3D </h1>
             <!-- <br> -->
             <p class="lead">
-               <i> A Virtual Collaborative Perception Dataset for UAVs
+               <i> Aerial Monocular 3D Object Detection Dataset
                </i>
             </p>
 
@@ -81,31 +81,12 @@
          <div class="container">
             <div class="row">
                <div class="col-lg-10 mx-auto">
-                  <h2>About CoPerception-UAV</h2>
+                  <h2>About AM3D</h2>
                   <p class="lead text-justify">
-                     Coperception-UAV is the first comprehensive dataset for UAV-based collaborative perception.<br>
-                     A UAV swarm has the potential to distribute tasks and achieve better, faster, and more robust performances than a single UAV. Recently, planning and control of a UAV swarm have been intensively studied; however, the collaborative perception remains under-explored due to the lack of a comprehensive dataset. This work aims to fill this gap and proposes a collaborative perception dataset for UAV swarm. <br>
-                     Based on the co-simulation platform of AirSim and CARLA, our dataset consists of 131.9k synchronous images collected from 5 coordinated UAVs flying at 3 altitudes over 3 simulated towns with 2 swarm formations. Each image is fully annotated with the pixel-wise semantic segmentation labels and 2D/3D bounding boxes of vehicles. We further build a benchmark on the proposed dataset by evaluating a variety of related multi-agent collaborative methods on multiple perception tasks, including object detection, semantic segmentation, and bird's eye-view (BEV) semantic segmentation. 
+                     We propose both simulation and real-world dataset, named AM3D-Sim and AM3D-Real. The datasets include RGB images with well-annotated 2D \& 3D bounding boxes of vehicles and precise camera pose information. Our dataset organization refers to the database schema of NuScenes, a open-source autonomous driving benchmark. Our goal is to motivate the monocular 3D object detection from aerial perspective by providing challenging benchmarks with novel difficulties to the 3D perception community. Our dataset can be used with nuscenes-devkit.
+                     AM3D-Sim is collected by the co-simulation of CARLA and AirSIM. CARLA~\cite{Carla} simulates complex scenes and traffic flow, and AirSIM~\cite{Airsim} simulates drones flying in the scene. To promote data diversity, the flying height is set ranging from $40m$ to $80m$, mostly covering an area of $200m \times 200m$. In simulation, the annotations could be produced autonomously, so we provide a large and diverse simulation benchmark. It contains 3 large towns, with 48,250 images (41,500/6,750 for training/testing) along with 397,984 3D \& 2D bounding boxes (347,588/5,0396 for training/testing). 
+                     AM3D-Real is collected with DJI Matrice 300 RTK flying over the campus. The drone is equipped with a well-aligned LiDAR and an RGB camera. We annotate the 3D bounding boxes in the 3D point clouds collected by the LiDAR and get the 2D boxes by projecting the 3D boxes back to the image according to the calibrated camera project matrix. Due to challenging and costly data collecting and labeling, the flying height is relatively lower, about $40m$ and the dataset size is relatively smaller. It contains 1,012 images (919/93 for training/testing) along with 33,083 3D \& 2D bounding boxes (31,668/1,415 for training/testing).   
                   </p>
-
-                  <video width="80%" height="auto"  controls > 
-                     <source type="video/mp4" src="images/vis.mp4"/> 
-                 </video>
-                 <br><br>
-                 <hr>
-
-                 <h3>Swarm Arrangement</h3>
-                 We arrange two types of formation modes for a UAV swarm: 
-                 discipline mode, where the swarm keeps a consistent and relatively static array, 
-                 and dynamic mode, where each UAV navigates independently in the scene.
-
-                 <div class="img-wide text-center">
-                  <!-- <p><img class="img-fluid" alt="teaser" src="https://via.placeholder.com/1500x600"></p> -->
-                  <p><img class="img-fluid" alt="teaser" width="70%" src="images/formation.png"></p>
-                  </div>
-
-                  <br><br>
-                 <hr>
 
                   <h3>Sensor Setup</h3>
                   In the UAV swarm, Each UAV is equipped with 5 RGB cameras in 5 directions and 5 semantic cameras collecting semantic ground truth for RGB cameras.<br>
@@ -116,10 +97,7 @@
                   <p><img class="img-fluid" alt="teaser" width="50%" src="images/sensor.png"></p>
                   </div>
 
-
-
                </div>
-               
             </div>
          </div>
       </section>
@@ -134,11 +112,8 @@
                   Fully-annotated data are provided in the dataset, including synchronous images with pixel-wise semantic labels, 2D & 3D bounding boxes of vehicles, and BEV semantic map.
                   <br><br>
                   <hr>
-                  
-                  <b>TODO Split all images</b>
-                  
 
-                  <h3>Camera data</h3>
+                  <h3>Simulation Camera data</h3>
                   We collect synchronous images from all cameras on 5 UAVs, which is 25 images in a sample. In total, 123.8K images are collected for the discipline swarm mode and 8.1K for the dynamic swarm mode.
                   <div class="row">
                      <div class="col-md-4">
@@ -156,29 +131,6 @@
                   </div>
                   <br><br>
                   <hr>
-
-                  
-
-                  <h3>Semantic label</h3>
-                  We provide semantic label for each image.
-                  <div class="row">
-                     <div class="col-md-4">
-                     <img src="images/sample_fig/CAM_FRONT_id_0_seg.png" alt="agent_0" style="width:90%">
-                     <figcaption>Agent_0_front</figcaption>
-                     </div>
-                     <div class="col-md-4">
-                     <img src="images/sample_fig/CAM_FRONT_id_1_seg.png" alt="agent_1" style="width:90%">
-                     <figcaption>Agent_1_front</figcaption>
-                     </div>
-                     <div class="col-md-4">
-                     <img src="images/sample_fig/CAM_FRONT_id_2_seg.png" alt="agent_2" style="width:90%">
-                     <figcaption>Agent_2_front</figcaption>
-                     </div>
-                  </div>
-                  <br><br>
-                  <hr>
-
-                  
 
                   <h3>Bounding boxes</h3>
                   3D bounding boxes of vehicles are recorded at the same moment with images, including location (x, y, z), rotation (w, x, y, z in quaternion) in the global coordinate and their length, width and height. <br>
@@ -199,24 +151,41 @@
                   </div>
                   <br><br>
                   <hr>
-                  
 
-                  <h3>BEV semantic label</h3>
-                  We provide BEV segmentation labels of four categories: roadway, building, vehicle, and others, which are the key elements to construct the layout of a city and foreground objects. The resolution of the BEV map is 0.25mx0.25m.
+                  <h3>Real-world Camera data</h3>
+                  We collect real-world images with DJI Matrice 300 RTK at flying height of 40m.
                   <div class="row">
                      <div class="col-md-4">
-                     <img src="images/sample_fig/CAM_FRONT_id_0_bev.jpg" alt="agent_0" style="width:90%">
+                     <img src="images/Real_fig/RealImage1.png" alt="image_0" style="width:90%">
                      <figcaption>Agent_0_front</figcaption>
                      </div>
                      <div class="col-md-4">
-                     <img src="images/sample_fig/CAM_FRONT_id_1_bev.jpg" alt="agent_1" style="width:90%">
+                     <img src="images/Real_fig/RealImage2.png" alt="image_1" style="width:90%">
+                     <figcaption>Agent_1_front</figcaption>
+                     </div>
+                  </div>
+                  <br><br>
+                  <hr>
+
+                  
+                  <h3>Bounding boxes</h3>
+                  3D bounding boxes of vehicles are annotated in the 3D point clouds captured by the LIDAR, and then projected to the 2D bounding boxes in the 2D images. 3D boxes including location (x, y, z), rotation (w, x, y, z in quaternion) in the global coordinate and their length, width and height. <br>
+                  To specifically address the occlusion issue, we also provide a binary label for the occlusion status of each bounding box.
+                  <div class="row">
+                     <div class="col-md-4">
+                     <img src="images/Real_fig/3D_PointClouds.png" alt="3D point clouds" style="width:90%">
+                     <figcaption>Agent_0_front</figcaption>
+                     </div>
+                     <div class="col-md-4">
+                     <img src="images/Real_fig/RealImage1.png" alt="image_0" style="width:90%">
                      <figcaption>Agent_1_front</figcaption>
                      </div>
                      <div class="col-md-4">
-                     <img src="images/sample_fig/CAM_FRONT_id_2_bev.jpg" alt="agent_2" style="width:90%">
+                     <img src="images/Real_fig/RealImage2.png" alt="image_1" style="width:90%">
                      <figcaption>Agent_2_front</figcaption>
                      </div>
                   </div>
+                  <br><br>
                   <hr>
 
 
