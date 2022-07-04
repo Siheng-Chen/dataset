@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="GAMMA is a solution to animating diverse 3D bodies.">
+      <meta name="author" content="Yan Zhang">
+      <title>CoPerception-UAV</title>
+      <meta property="og:title" content="[arXiv 2021] The Wanderings of Odysseus in 3D Scenes" />
+      <meta property="og:description" content="GAMMA is a solution to animating 3D bodies.">
+      <meta property="og:image" content="https://yz-cnsdqz.github.io/eigenmotion/GAMMA/images/GAMMA-teaser.jpg" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="[arXiv 2021] The Wanderings of Odysseus in 3D Scenes" />
+      <meta name="twitter:description" content="GAMMA is a solution to animating 3D bodies." />
+      <meta name="twitter:image" content="https://yz-cnsdqz.github.io/eigenmotion/GAMMA/images/GAMMA-teaser.jpg" />
+      <meta name="twitter:image:alt" content="GAMMA arXiv 2021" />
+      <!-- Bootstrap core CSS -->
+      <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Custom styles for this template -->
+      <link href="css/scrolling-nav.css" rel="stylesheet">
+      <!-- nice figures  -->
+      <link rel="stylesheet" href="css/font-awesome.css">
+      <link rel="icon" type="image/png" href="images/favicon.png">
+
+   </head>
+   <body id="page-top">
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+         <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">CoPerception-UAV</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#data">Data</a>
+                  </li>
+                  <!-- <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#downloads">Downloads</a>
+                  </li> -->
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#tutorial">Tutorial</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#download">Download</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <header class="bg-light text-black">
+         <div class="container text-center">
+            <h1>CoPerception-UAV </h1>
+            <!-- <br> -->
+            <p class="lead">
+               <i> A Virtual Collaborative Perception Dataset for UAVs
+               </i>
+            </p>
+
+            <div class="downloads">
+               <br><h3>
+               <a class="publink" href="" target="_blank" style="text-decoration: none"> Paper <i class="fa fa-print"></i></a> &nbsp;
+               <a class="publink" href="" target="_blank" style="text-decoration: none"> Download <i class="fa fa-github"></i></a> &nbsp;
+               <a class="publink" href="" target="_blank" style="text-decoration: none"> Code <i class="fa fa-github"></i></a> &nbsp;
+               <h3>
+           </div>
+         </div>
+
+
+      </header>
+
+      <section id="about" class="about-section">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <h2>About CoPerception-UAV</h2>
+                  <p class="lead text-justify">
+                     Coperception-UAV is the first comprehensive dataset for UAV-based collaborative perception.<br>
+                     A UAV swarm has the potential to distribute tasks and achieve better, faster, and more robust performances than a single UAV. Recently, planning and control of a UAV swarm have been intensively studied; however, the collaborative perception remains under-explored due to the lack of a comprehensive dataset. This work aims to fill this gap and proposes a collaborative perception dataset for UAV swarm. <br>
+                     Based on the co-simulation platform of AirSim and CARLA, our dataset consists of 131.9k synchronous images collected from 5 coordinated UAVs flying at 3 altitudes over 3 simulated towns with 2 swarm formations. Each image is fully annotated with the pixel-wise semantic segmentation labels and 2D/3D bounding boxes of vehicles. We further build a benchmark on the proposed dataset by evaluating a variety of related multi-agent collaborative methods on multiple perception tasks, including object detection, semantic segmentation, and bird's eye-view (BEV) semantic segmentation. 
+                  </p>
+
+                  <video width="80%" height="auto"  controls > 
+                     <source type="video/mp4" src="images/vis.mp4"/> 
+                 </video>
+                 <br><br>
+                 <hr>
+
+                 <h3>Swarm Arrangement</h3>
+                 We arrange two types of formation modes for a UAV swarm: 
+                 discipline mode, where the swarm keeps a consistent and relatively static array, 
+                 and dynamic mode, where each UAV navigates independently in the scene.
+
+                 <div class="img-wide text-center">
+                  <!-- <p><img class="img-fluid" alt="teaser" src="https://via.placeholder.com/1500x600"></p> -->
+                  <p><img class="img-fluid" alt="teaser" width="70%" src="images/formation.png"></p>
+                  </div>
+
+                  <br><br>
+                 <hr>
+
+                  <h3>Sensor Setup</h3>
+                  In the UAV swarm, Each UAV is equipped with 5 RGB cameras in 5 directions and 5 semantic cameras collecting semantic ground truth for RGB cameras.<br>
+                  - 90° horizontal FoV<br>
+                  - 1 bird's eye view camera and 4 cameras facing forward, backward, right, and left with a pitch degree of -45◦<br>
+                  - image size: 800x450 pixels<br>
+
+                  <p><img class="img-fluid" alt="teaser" width="50%" src="images/sensor.png"></p>
+                  </div>
+
+
+
+               </div>
+               
+            </div>
+         </div>
+      </section>
+
+
+      <section id="data" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <h2 class="section-title-tc">Data Annotations</h2>
+                  <br>
+                  Fully-annotated data are provided in the dataset, including synchronous images with pixel-wise semantic labels, 2D & 3D bounding boxes of vehicles, and BEV semantic map.
+                  <br><br>
+                  <hr>
+                  
+                  <b>TODO Split all images</b>
+                  
+
+                  <h3>Camera data</h3>
+                  We collect synchronous images from all cameras on 5 UAVs, which is 25 images in a sample. In total, 123.8K images are collected for the discipline swarm mode and 8.1K for the dynamic swarm mode.
+                  <div class="row">
+                     <div class="col-md-4">
+                     <img src="images/sample_fig/CAM_FRONT_id_0.png" alt="agent_0" style="width:90%">
+                     <figcaption>Agent_0_front</figcaption>
+                     </div>
+                     <div class="col-md-4">
+                     <img src="images/sample_fig/CAM_FRONT_id_1.png" alt="agent_1" style="width:90%">
+                     <figcaption>Agent_1_front</figcaption>
+                     </div>
+                     <div class="col-md-4">
+                     <img src="images/sample_fig/CAM_FRONT_id_2.png" alt="agent_2" style="width:90%">
+                     <figcaption>Agent_2_front</figcaption>
+                     </div>
+                  </div>
+                  <br><br>
+                  <hr>
+
+                  
+
+                  <h3>Semantic label</h3>
+                  We provide semantic label for each image.
+                  <div class="row">
+                     <div class="col-md-4">
+                     <img src="images/sample_fig/CAM_FRONT_id_0_seg.png" alt="agent_0" style="width:90%">
+                     <figcaption>Agent_0_front</figcaption>
+                     </div>
+                     <div class="col-md-4">
+                     <img src="images/sample_fig/CAM_FRONT_id_1_seg.png" alt="agent_1" style="width:90%">
+                     <figcaption>Agent_1_front</figcaption>
+                     </div>
+                     <div class="col-md-4">
+                     <img src="images/sample_fig/CAM_FRONT_id_2_seg.png" alt="agent_2" style="width:90%">
+                     <figcaption>Agent_2_front</figcaption>
+                     </div>
+                  </div>
+                  <br><br>
+                  <hr>
+
+                  
+
+                  <h3>Bounding boxes</h3>
+                  3D bounding boxes of vehicles are recorded at the same moment with images, including location (x, y, z), rotation (w, x, y, z in quaternion) in the global coordinate and their length, width and height. <br>
+                  To specifically address the occlusion issue, we also provide a binary label for the occlusion status of each bounding box.
+                  <div class="row">
+                     <div class="col-md-4">
+                     <img src="images/sample_fig/CAM_FRONT_id_0_4.png" alt="agent_0" style="width:90%">
+                     <figcaption>Agent_0_front</figcaption>
+                     </div>
+                     <div class="col-md-4">
+                     <img src="images/sample_fig/CAM_FRONT_id_1_4.png" alt="agent_1" style="width:90%">
+                     <figcaption>Agent_1_front</figcaption>
+                     </div>
+                     <div class="col-md-4">
+                     <img src="images/sample_fig/CAM_FRONT_id_2_4.png" alt="agent_2" style="width:90%">
+                     <figcaption>Agent_2_front</figcaption>
+                     </div>
+                  </div>
+                  <br><br>
+                  <hr>
+                  
+
+                  <h3>BEV semantic label</h3>
+                  We provide BEV segmentation labels of four categories: roadway, building, vehicle, and others, which are the key elements to construct the layout of a city and foreground objects. The resolution of the BEV map is 0.25mx0.25m.
+                  <div class="row">
+                     <div class="col-md-4">
+                     <img src="images/sample_fig/CAM_FRONT_id_0_bev.jpg" alt="agent_0" style="width:90%">
+                     <figcaption>Agent_0_front</figcaption>
+                     </div>
+                     <div class="col-md-4">
+                     <img src="images/sample_fig/CAM_FRONT_id_1_bev.jpg" alt="agent_1" style="width:90%">
+                     <figcaption>Agent_1_front</figcaption>
+                     </div>
+                     <div class="col-md-4">
+                     <img src="images/sample_fig/CAM_FRONT_id_2_bev.jpg" alt="agent_2" style="width:90%">
+                     <figcaption>Agent_2_front</figcaption>
+                     </div>
+                  </div>
+                  <hr>
+
+
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- <section id="downloads" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                   <h2>Downloads</h2> <br>
+                  <h2 class="img-wide text-center">
+                      <a class="publink" href="https://arxiv.org/abs/2112.09251" target="_blank" style="text-decoration: none"> Paper <i class="fa fa-print"></i></a> &nbsp;&nbsp;
+                      <a class="publink" href="" target="_blank" style="text-decoration: none"> Code (coming soon) <i class="fa fa-github"></i></a> &nbsp;&nbsp;
+                  </h2>
+               </div>
+            </div>
+         </div>
+      </section> -->
+
+
+
+      <section id="tutorial" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <h2 class="section-title-tc">Tutorial</h2>
+                  <br>
+                  The dataset is organized in a similar way with the widelyused autonomous driving dataset, nuScenes; so it can be used directly with the well-established nuScenes-devkit.
+                  <br>
+                  The tutorial could be found <a href="">here</a>.
+                  <div class="img-wide text-center">
+                     <!-- <p><img class="img-fluid" alt="teaser" src="https://via.placeholder.com/1500x600"></p> -->
+                     <p><img class="img-fluid" alt="teaser" width="80%" src="images/tutorial.png"></p>
+                     </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <section id="download" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <h2 class="section-title-tc">Download</h2>
+                  <a href="">Download</a>
+            </div>
+         </div>
+      </section>
+
+      <section id="team" class="team-section">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <h2 class="section-title-tc">Team</h2>
+                  <div class="row">
+
+                     
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Footer -->
+      <footer class="py-5 bg-dark">
+         <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; GAMMA 2021</p>
+         </div>
+         <!-- /.container -->
+      </footer>
+      <!-- Bootstrap core JavaScript -->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- Plugin JavaScript -->
+      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+      <!-- Custom JavaScript for this theme -->
+      <script src="js/scrolling-nav.js"></script>
+   </body>
+</html>
