@@ -83,20 +83,9 @@
                <div class="col-lg-10 mx-auto">
                   <h2>About AM3D</h2>
                   <p class="lead text-justify">
-                     We propose both simulation and real-world dataset, named AM3D-Sim and AM3D-Real. The datasets include RGB images with well-annotated 2D \& 3D bounding boxes of vehicles and precise camera pose information. Our dataset organization refers to the database schema of NuScenes, a open-source autonomous driving benchmark. Our goal is to motivate the monocular 3D object detection from aerial perspective by providing challenging benchmarks with novel difficulties to the 3D perception community. Our dataset can be used with nuscenes-devkit.
-                     AM3D-Sim is collected by the co-simulation of CARLA and AirSIM. CARLA~\cite{Carla} simulates complex scenes and traffic flow, and AirSIM~\cite{Airsim} simulates drones flying in the scene. To promote data diversity, the flying height is set ranging from $40m$ to $80m$, mostly covering an area of $200m \times 200m$. In simulation, the annotations could be produced autonomously, so we provide a large and diverse simulation benchmark. It contains 3 large towns, with 48,250 images (41,500/6,750 for training/testing) along with 397,984 3D \& 2D bounding boxes (347,588/5,0396 for training/testing). 
-                     AM3D-Real is collected with DJI Matrice 300 RTK flying over the campus. The drone is equipped with a well-aligned LiDAR and an RGB camera. We annotate the 3D bounding boxes in the 3D point clouds collected by the LiDAR and get the 2D boxes by projecting the 3D boxes back to the image according to the calibrated camera project matrix. Due to challenging and costly data collecting and labeling, the flying height is relatively lower, about $40m$ and the dataset size is relatively smaller. It contains 1,012 images (919/93 for training/testing) along with 33,083 3D \& 2D bounding boxes (31,668/1,415 for training/testing).   
-                  </p>
-
-                  <h3>Sensor Setup</h3>
-                  In the UAV swarm, Each UAV is equipped with 5 RGB cameras in 5 directions and 5 semantic cameras collecting semantic ground truth for RGB cameras.<br>
-                  - 90° horizontal FoV<br>
-                  - 1 bird's eye view camera and 4 cameras facing forward, backward, right, and left with a pitch degree of -45◦<br>
-                  - image size: 800x450 pixels<br>
-
-                  <p><img class="img-fluid" alt="teaser" width="50%" src="images/sensor.png"></p>
-                  </div>
-
+                     We propose both simulation and real-world dataset, named AM3D-Sim and AM3D-Real. The datasets include RGB images with well-annotated 2D & 3D bounding boxes of vehicles and precise camera pose information. Our dataset organization refers to the database schema of NuScenes, a open-source autonomous driving benchmark. Our dataset can be used with nuscenes-devkit. Our goal is to motivate the monocular 3D object detection from aerial perspective by providing challenging benchmarks with novel difficulties to the 3D perception community. 
+                     </p>
+                     <hr>
                </div>
             </div>
          </div>
@@ -107,82 +96,105 @@
          <div class="container">
             <div class="row">
                <div class="col-lg-10 mx-auto">
-                  <h2 class="section-title-tc">Data Annotations</h2>
-                  <br>
-                  Fully-annotated data are provided in the dataset, including synchronous images with pixel-wise semantic labels, 2D & 3D bounding boxes of vehicles, and BEV semantic map.
-                  <br><br>
+                  <h2 class="section-title-tc">AM3D-Sim</h2>
+                  <p class="text-justify">
+                     AM3D-Sim is collected by the co-simulation of CARLA and AirSIM. CARLA simulates complex scenes and traffic flow, and AirSIM simulates drones flying in the scene. To promote data diversity, the flying height is set ranging from 40m to 80m, mostly covering an area of 200m x 200m. In simulation, the annotations could be produced autonomously, so we provide a large and diverse simulation benchmark. It contains 3 large towns, with 48,250 images (41,500/6,750 for training/testing) along with 397,984 3D & 2D bounding boxes (347,588/5,0396 for training/testing).   </p>
                   <hr>
 
-                  <h3>Simulation Camera data</h3>
-                  We collect synchronous images from all cameras on 5 UAVs, which is 25 images in a sample. In total, 123.8K images are collected for the discipline swarm mode and 8.1K for the dynamic swarm mode.
+                  <h3>Sensor Setup</h3>
+                  <p class="text-justify">
+                  In the UAV swarm, Each UAV is equipped with 5 RGB cameras in 5 directions and 5 semantic cameras collecting semantic ground truth for RGB cameras.<br>
+                  - 90° horizontal FoV<br>
+                  - 1 bird's eye view camera and 4 cameras facing forward, backward, right, and left with a pitch degree of -45◦<br>
+                  - image size: 800x450 pixels<br>
+                  </p>
+                  <p><img class="img-fluid" alt="teaser" width="50%" src="images/sensor.png"></p>
+                  <hr>
+                  
+                  <h3>Simulation Camera Data</h3>
                   <div class="row">
                      <div class="col-md-4">
                      <img src="images/sample_fig/CAM_FRONT_id_0.png" alt="agent_0" style="width:90%">
-                     <figcaption>Agent_0_front</figcaption>
+                     <figcaption>Image_0</figcaption>
                      </div>
                      <div class="col-md-4">
                      <img src="images/sample_fig/CAM_FRONT_id_1.png" alt="agent_1" style="width:90%">
-                     <figcaption>Agent_1_front</figcaption>
+                     <figcaption>Image_1</figcaption>
                      </div>
                      <div class="col-md-4">
                      <img src="images/sample_fig/CAM_FRONT_id_2.png" alt="agent_2" style="width:90%">
-                     <figcaption>Agent_2_front</figcaption>
+                     <figcaption>Image_2</figcaption>
                      </div>
                   </div>
                   <br><br>
                   <hr>
 
                   <h3>Bounding boxes</h3>
+                  <p class="text-justify">
                   3D bounding boxes of vehicles are recorded at the same moment with images, including location (x, y, z), rotation (w, x, y, z in quaternion) in the global coordinate and their length, width and height. <br>
                   To specifically address the occlusion issue, we also provide a binary label for the occlusion status of each bounding box.
+                  </p>
                   <div class="row">
                      <div class="col-md-4">
                      <img src="images/sample_fig/CAM_FRONT_id_0_4.png" alt="agent_0" style="width:90%">
-                     <figcaption>Agent_0_front</figcaption>
+                     <figcaption>Image_0</figcaption>
                      </div>
                      <div class="col-md-4">
                      <img src="images/sample_fig/CAM_FRONT_id_1_4.png" alt="agent_1" style="width:90%">
-                     <figcaption>Agent_1_front</figcaption>
+                     <figcaption>Image_1</figcaption>
                      </div>
                      <div class="col-md-4">
                      <img src="images/sample_fig/CAM_FRONT_id_2_4.png" alt="agent_2" style="width:90%">
-                     <figcaption>Agent_2_front</figcaption>
-                     </div>
-                  </div>
-                  <br><br>
-                  <hr>
-
-                  <h3>Real-world Camera data</h3>
-                  We collect real-world images with DJI Matrice 300 RTK at flying height of 40m.
-                  <div class="row">
-                     <div class="col-md-4">
-                     <img src="images/Real_fig/RealImage1.png" alt="image_0" style="width:90%">
-                     <figcaption>Agent_0_front</figcaption>
-                     </div>
-                     <div class="col-md-4">
-                     <img src="images/Real_fig/RealImage2.png" alt="image_1" style="width:90%">
-                     <figcaption>Agent_1_front</figcaption>
+                     <figcaption>Image_2</figcaption>
                      </div>
                   </div>
                   <br><br>
                   <hr>
 
                   
+                  <h2 class="section-title-tc">AM3D-Real</h2>
+                  <p class="text-justify">
+                     AM3D-Real is collected with DJI Matrice 300 RTK flying over the campus. The drone is equipped with a well-aligned LiDAR and an RGB camera. We annotate the 3D bounding boxes in the 3D point clouds collected by the LiDAR and get the 2D boxes by projecting the 3D boxes back to the image according to the calibrated camera project matrix. Due to challenging and costly data collecting and labeling, the flying height is relatively lower, about 40m and the dataset size is relatively smaller. It contains 1,012 images (919/93 for training/testing) along with 33,083 3D & 2D bounding boxes (31,668/1,415 for training/testing).   
+                  <hr>
+                  
+                  <h3>Real-world Camera Data</h3>
+                  <div class="row">
+                     <div class="col-md-6">
+                     <img src="images/Real_fig/RealImage1.png" alt="image_0" style="width:90%">
+                     <figcaption>Image_0</figcaption>
+                     </div>
+                     <div class="col-md-6">
+                     <img src="images/Real_fig/RealImage2.png" alt="image_1" style="width:90%">
+                     <figcaption>Image_1</figcaption>
+                     </div>
+                  </div>
+                  <br><br>
+                  <hr>
+
+                  <h3>Real-world LIDAR Data</h3>
+                  <div class="row">
+                     <div class="col-md-10">
+                        <img src="images/Real_fig/3D_PointClouds.png" alt="3D point clouds" style="width:90%">
+                        <figcaption>3D point clouds and 3D boxes</figcaption>
+                        </div>
+                  </div>
+                  <br><br>
+                  <hr>
+
+                  
                   <h3>Bounding boxes</h3>
+                  <p class="text-justify">
                   3D bounding boxes of vehicles are annotated in the 3D point clouds captured by the LIDAR, and then projected to the 2D bounding boxes in the 2D images. 3D boxes including location (x, y, z), rotation (w, x, y, z in quaternion) in the global coordinate and their length, width and height. <br>
                   To specifically address the occlusion issue, we also provide a binary label for the occlusion status of each bounding box.
+                  </p>
                   <div class="row">
-                     <div class="col-md-4">
-                     <img src="images/Real_fig/3D_PointClouds.png" alt="3D point clouds" style="width:90%">
-                     <figcaption>Agent_0_front</figcaption>
-                     </div>
-                     <div class="col-md-4">
+                     <div class="col-md-6">
                      <img src="images/Real_fig/RealImage1.png" alt="image_0" style="width:90%">
-                     <figcaption>Agent_1_front</figcaption>
+                     <figcaption>Image_0</figcaption>
                      </div>
-                     <div class="col-md-4">
+                     <div class="col-md-6">
                      <img src="images/Real_fig/RealImage2.png" alt="image_1" style="width:90%">
-                     <figcaption>Agent_2_front</figcaption>
+                     <figcaption>Image_1</figcaption>
                      </div>
                   </div>
                   <br><br>
@@ -216,8 +228,9 @@
                <div class="col-lg-10 mx-auto">
                   <h2 class="section-title-tc">Tutorial</h2>
                   <br>
+                  <p class="text-justify">
                   The dataset is organized in a similar way with the widelyused autonomous driving dataset, nuScenes; so it can be used directly with the well-established nuScenes-devkit.
-                  <br>
+                  </p><br>
                   The tutorial could be found <a href="">here</a>.
                   <div class="img-wide text-center">
                      <!-- <p><img class="img-fluid" alt="teaser" src="https://via.placeholder.com/1500x600"></p> -->
