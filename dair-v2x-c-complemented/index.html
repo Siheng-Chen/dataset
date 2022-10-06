@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="DAIR-V2X-C Complemented Annotations">
+      <meta name="author" content="Yifan Lu">
+      <title>DAIR-V2X-C Dataset Complemented Annotations</title>
+      <meta property="og:description" content="DAIR-V2X-C Complemented Annotations">
+      <!-- Bootstrap core CSS -->
+      <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Custom styles for this template -->
+      <link href="css/scrolling-nav.css" rel="stylesheet">
+      <!-- nice figures  -->
+      <link rel="stylesheet" href="css/font-awesome.css">
+      <link rel="icon" type="image/png" href="images/favicon.png">
+
+   </head>
+   <body id="page-top">
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+         <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">DAIR-V2X-C Compemented Annotations</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#video">Video</a>
+                  </li>
+                  <!-- <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#downloads">Downloads</a>
+                  </li> -->
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#pubs">Citation</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#acknowledgement">Acknowledgement</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <header class="bg-light text-black">
+         <div class="container text-center">
+            <h1>DAIR-V2X-C Complemented Annotations </h1>
+            <!-- <br> -->
+            <p class="lead">
+               
+               </i>
+            </p>
+
+            <div class="downloads">
+               <br><h3>
+               <a class="publink" href="https://drive.google.com/file/d/13g3APNeHBVjPcF-nTuUoNOSGyTzdfnUK/view?usp=sharing" target="_blank" style="text-decoration: none">Download Annotations <i class="fa fa-hdd-o"></i></a> &nbsp;
+               <h3>
+           </div>
+         </div>
+
+
+      </header>
+
+      <section id="about" class="about-section">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <h2 class="section-title-tc">About</h2>
+                  <p class="lead text-justify">
+                     Originally DAIR-V2X only annotates 3D boxes within the range of camera's view in vehicle-side. 
+                     We supplement the missing 3D box annotations to enable the 360 degree detection. 
+                     With fully complemented vehicle-side labels, we regenerate the cooperative labels for users, which follow the original cooperative label format.
+                  </p>
+                  <div class="container">
+                     <div class="row">
+                        <div class="col-lg-10 mx-auto">
+                           <table><tr>
+                           <td>
+                              <figure>
+                              <p><img class="img-fluid"  width="100%" src="images\dair-v2x_compare_gif\before2.gif">
+                              <figcaption>
+                                 Original Cooperative Labels
+                              </figcaption>
+                            </figure></td>
+                            <td>
+                              <figure>
+                              <p><img class="img-fluid"  width="100%" src="images\dair-v2x_compare_gif\after2.gif">
+                              <figcaption>
+                                Updated Cooperative Labels
+                              </figcaption>
+                            </figure></td>
+                           </tr></table>
+         
+                        </div>
+                     </div>
+                  </div>
+                  <br><br>
+                  <hr>
+                  <h4>Usage:</h4>
+                  Download the annotations files from <a href="https://drive.google.com/file/d/13g3APNeHBVjPcF-nTuUoNOSGyTzdfnUK/view?usp=sharing">Google Drive</a>, which contains complemented vehicle-side labels, cooperative labels and individual train/val split files from official splits..
+                  
+                  Suppose you have downloaded the <a href="https://thudair.baai.ac.cn/">DAIR-V2X-C</a> dataset and unzip it under <code>YOUR_DAIR_V2X_C_PATH</code>.
+                  <div class="img-wide text-center">
+                     <!-- <p><img class="img-fluid" alt="teaser" src="https://via.placeholder.com/1500x600"></p> -->
+                     <p><img class="img-fluid" alt="teaser" width="30%" src="images/complemented_anno_tree.jpg"></p>
+                  </div>
+
+                  <h5>Step 1: Vehicle side annotations</h5>
+                  replace <code>YOUR_DAIR_V2X_C_PATH/cooperative-vehicle-infrastructure/vehicle-side/label/lidar</code> with provided <code>new_labels/vehicle-side_label/lidar</code>.
+                  <div class="img-wide text-center">
+                     <!-- <p><img class="img-fluid" alt="teaser" src="https://via.placeholder.com/1500x600"></p> -->
+                     <p><img class="img-fluid" alt="teaser" width="40%" src="images/veh_side_label.jpg"></p>
+                  </div>
+                  <h5>Step 2: Cooperative annotations</h5>
+                  replace <code>YOUR_DAIR_V2X_C_PATH/cooperative-vehicle-infrastructure/cooperative/label_world</code> with provided <code>new_labels/cooperative_label/lidar_world</code>.
+                  <div class="img-wide text-center">
+                     <!-- <p><img class="img-fluid" alt="teaser" src="https://via.placeholder.com/1500x600"></p> -->
+                     <p><img class="img-fluid" alt="teaser" width="40%" src="images/cooperative_label.jpg"></p>
+                  </div>
+                  
+                  <h5>Step 3 (optional): individual splits</h5>
+                  put provided <code>train.json</code> and <code>val.json</code> under <code>YOUR_DAIR_V2X_C_PATH/cooperative-vehicle-infrastructure/</code>. These are just individual splits from <a href="https://github.com/AIR-THU/DAIR-V2X/blob/main/data/split_datas/cooperative-split-data.json">official splits</a>. Notice that the original train split contains one frame (vehicle frame id "002234") without infrastructure files, so we omit it in `train.json`. 
+               </div>
+            </div>
+         </div>
+      </section>
+
+
+      <section id="video" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <h2 class="section-title-tc">Video</h2>
+                  <div class="row">
+                     <div class="col-lg-10 mx-auto">
+                        <table><tr>
+                           <td>
+                              <figure>
+                              <p><img class="img-fluid"  width="100%" src="images\dair-v2x_compare_gif\before1.gif">
+                              </figure>
+                           </td>
+                           <td>
+                              <figure>
+                              <p><img class="img-fluid"  width="100%" src="images\dair-v2x_compare_gif\after1.gif">
+                              </figure>
+                           </td>
+                        </tr></table>
+                     </div>
+                     <div class="col-lg-10 mx-auto">
+                        <table><tr>
+                           <td>
+                              <figure>
+                              <p><img class="img-fluid"  width="100%" src="images\dair-v2x_compare_gif\before2.gif">
+                              </figure>
+                           </td>
+                           <td>
+                              <figure>
+                              <p><img class="img-fluid"  width="100%" src="images\dair-v2x_compare_gif\after2.gif">
+                              </figure>
+                           </td>
+                        </tr></table>
+                     </div>
+                     <div class="col-lg-10 mx-auto">
+                        <table><tr>
+                           <td>
+                              <figure>
+                              <p><img class="img-fluid"  width="100%" src="images\dair-v2x_compare_gif\before3.gif">
+                              <figcaption>
+                                 Original Cooperative Labels
+                              </figcaption>
+                              </figure>
+                           </td>
+                           <td>
+                              <figure>
+                              <p><img class="img-fluid"  width="100%" src="images\dair-v2x_compare_gif\after3.gif">
+                              <figcaption>
+                                 Updated Cooperative Labels
+                              </figcaption>
+                              </figure>
+                           </td>
+                        </tr></table>
+                     </div>
+                  </div>
+
+               </div>
+            </div>
+         </div>
+      </section>
+
+
+
+
+      <section id="pubs" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <h2 class="section-title-tc">Citation</h2>
+                  If you use the DAIR-V2X dataset and our complemented annotations, please
+                  <br><br>
+                  cite <a href="https://thudair.baai.ac.cn/">DAIR-V2X</a>
+
+<pre style="display: block; background-color: #f5f5f5; border: 1px solid #ccc; border-radius: 4px">
+@inproceedings{yu2022dairv2x,
+   title={DAIR-V2X: A Large-Scale Dataset for Vehicle-Infrastructure Cooperative 3D Object Detection},
+   author={Yu, Haibao and Luo, Yizhen and Shu, Mao and Huo, Yiyi and Yang, Zebang and Shi, Yifeng and Guo, Zhenglong and Li, Hanyu and Hu, Xing and Yuan, Jirui and Nie, Zaiqing},
+   booktitle={IEEE/CVF Conf.~on Computer Vision and Pattern Recognition (CVPR)},
+   month = jun,
+   year={2022}}
+}</pre>
+                  cite <a href="https://github.com/yifanlu0227/CoAlign">CoAlign</a>.
+
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <section id="acknowledgement" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <h2 class="section-title-tc">Acknowledgement</h2>
+                  Thanks to the first real-world dataset <a href="https://thudair.baai.ac.cn/">DAIR-V2X</a>, the development of collaborative perception research has been greatly advanced.
+            </div>
+         </div>
+      </section>
+
+
+      <!-- Footer -->
+      <footer class="py-5 bg-dark">
+         <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; GAMMA 2021</p>
+         </div>
+         <!-- /.container -->
+      </footer>
+      <!-- Bootstrap core JavaScript -->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- Plugin JavaScript -->
+      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+      <!-- Custom JavaScript for this theme -->
+      <script src="js/scrolling-nav.js"></script>
+   </body>
+</html>
