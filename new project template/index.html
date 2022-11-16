@@ -5,13 +5,13 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="description" content="GAMMA is a solution to animating diverse 3D bodies.">
       <meta name="author" content="Yan Zhang">
-      <title>The Wanderings of Odysseus in 3D Scenes</title>
-      <meta property="og:title" content="[arXiv 2021] The Wanderings of Odysseus in 3D Scenes" />
+      <title>AM3D</title>
+      <meta property="og:title" content="Aerial Monocular 3D Object Detection" />
       <meta property="og:description" content="GAMMA is a solution to animating 3D bodies.">
       <meta property="og:image" content="https://yz-cnsdqz.github.io/eigenmotion/GAMMA/images/GAMMA-teaser.jpg" />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="[arXiv 2021] The Wanderings of Odysseus in 3D Scenes" />
+      <meta name="twitter:title" content="Aerial Monocular 3D Object Detection" />
       <meta name="twitter:description" content="GAMMA is a solution to animating 3D bodies." />
       <meta name="twitter:image" content="https://yz-cnsdqz.github.io/eigenmotion/GAMMA/images/GAMMA-teaser.jpg" />
       <meta name="twitter:image:alt" content="GAMMA arXiv 2021" />
@@ -28,7 +28,7 @@
       <!-- Navigation -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
          <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">GAMMA</a>
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">AM3D</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -38,16 +38,16 @@
                      <a class="nav-link js-scroll-trigger" href="#about">About</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link js-scroll-trigger" href="#video">Video</a>
+                     <a class="nav-link js-scroll-trigger" href="#data">Data</a>
                   </li>
                   <!-- <li class="nav-item">
                      <a class="nav-link js-scroll-trigger" href="#downloads">Downloads</a>
                   </li> -->
                   <li class="nav-item">
-                     <a class="nav-link js-scroll-trigger" href="#pubs">Citation</a>
+                     <a class="nav-link js-scroll-trigger" href="#tutorial">Tutorial</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link js-scroll-trigger" href="#acknowledgement">Acknowledgement</a>
+                     <a class="nav-link js-scroll-trigger" href="#download">Download</a>
                   </li>
                   <li class="nav-item">
                      <a class="nav-link js-scroll-trigger" href="#team">Team</a>
@@ -58,21 +58,18 @@
       </nav>
       <header class="bg-light text-black">
          <div class="container text-center">
-            <h1>The Wanderings of Odysseus in 3D Scenes </h1>
+            <h1>AM3D </h1>
             <!-- <br> -->
             <p class="lead">
-               <i> We propose <b>GAMMA</b>,
-                  an automatic and scalable solution, to populate the 3D scene with diverse digital humans. The digital humans have 
-                  1) varied body shapes, 
-                  2) realistic and perpetual motions to reach goals, and 
-                  3) plausible body-ground contact.
+               <i> Aerial Monocular 3D Object Detection Dataset
                </i>
             </p>
 
             <div class="downloads">
                <br><h3>
-               <a class="publink" href="https://drive.google.com/file/d/1FgKHlwehR8RGZuaW5syWn7DP8E5UQz1b/view?usp=sharing" target="_blank" style="text-decoration: none"> Paper <i class="fa fa-print"></i></a> &nbsp;
-               <a class="publink" href="" target="_blank" style="text-decoration: none"> Code (coming soon) <i class="fa fa-github"></i></a> &nbsp;
+               <a class="publink" href="" target="_blank" style="text-decoration: none"> Paper <i class="fa fa-print"></i></a> &nbsp;
+               <a class="publink" href="" target="_blank" style="text-decoration: none"> Download <i class="fa fa-github"></i></a> &nbsp;
+               <a class="publink" href="" target="_blank" style="text-decoration: none"> Code <i class="fa fa-github"></i></a> &nbsp;
                <h3>
            </div>
          </div>
@@ -84,80 +81,125 @@
          <div class="container">
             <div class="row">
                <div class="col-lg-10 mx-auto">
-                  <div class="img-wide text-center">
-                     <!-- <p><img class="img-fluid" alt="teaser" src="https://via.placeholder.com/1500x600"></p> -->
-                     <p><img class="img-fluid" alt="teaser" src="images/GAMMA-teaser.jpg"></p>
-                  </div>
-                  <br><br>
-                  <h4>Abstract</h4>
+                  <h2>About AM3D</h2>
                   <p class="lead text-justify">
-                     Our goal is to populate digital environments, in which the digital humans have diverse body shapes, move perpetually, and have plausible body-scene contact. The core challenge is to generate realistic, controllable, and infinitely long motions for diverse 3D bodies. To this end, we propose generative motion primitives via body surface markers, shortened as GAMMA. In our solution, we decompose the long-term motion into a time sequence of motion primitives. We exploit body surface markers and conditional variational autoencoder to model each motion primitive, and generate long-term motion by implementing the generative model recursively. To control the motion to reach a goal, we apply a policy network to explore the model latent space, and use a tree-based search to preserve the motion quality during testing. Experiments show that our method can produce more realistic and controllable motion than state-of-the-art data-driven method. With conventional path-finding algorithms, the generated human bodies can realistically move in the scene for a long distance and a long time.
-                  </p>
-                  <br><br>
-                  <hr>
-                  <h4>Use case: How to navigate a body mesh in a 3D scene?</h4>
-                  Let's assume that we have a virtual environment of 40x40 squaremeters with obstacles (cyan blocks).
-                  <div class="img-wide text-center">
-                     <!-- <p><img class="img-fluid" alt="teaser" src="https://via.placeholder.com/1500x600"></p> -->
-                     <p><img class="img-fluid" alt="teaser" width="50%" src="images/GAMMAUse-scene.jpg"></p>
-                  </div>
-
-                  <h5>Step 1: bake a navigation mesh</h5>
-                  This step can either be completed by blender, or other game engines like Unity3D or Unreal. 
-                  Note that margins around the blocks are specified to avoid collision.
-                  <div class="img-wide text-center">
-                     <!-- <p><img class="img-fluid" alt="teaser" src="https://via.placeholder.com/1500x600"></p> -->
-                     <p><img class="img-fluid" alt="teaser" width="50%" src="images/GAMMAUse-navimesh.png"></p>
-                  </div>
-                  <h5>Step 2: randomly choose a walking path</h5>
-                  Based on the navigation mesh, we can use path-finding algorithms, e.g. A*, to produce walking paths, which are in terms of a set of waypoints.
-                  In our example, we specify a random starting location, a random ending location, and produce the path using <a href="https://github.com/yz-cnsdqz/NavTrimesh">this repo</a>.
-                  <div class="img-wide text-center">
-                     <!-- <p><img class="img-fluid" alt="teaser" src="https://via.placeholder.com/1500x600"></p> -->
-                     <p><img class="img-fluid" alt="teaser" width="85%" src="images/GAMMAUse-pathfinding.png"></p>
-                  </div>
-                  
-                  <h5>Step 3: place a random body mesh at the starting location, and run GAMMA</h5>
-                  On the starting location, we place a <a href="https://smpl-x.is.tue.mpg.de">SMPL-X</a> body mesh that faces the next target.
-                  The body mesh is either male or female. The first 10 body shape parameters are randomly sampled from N(0,I), and the body pose
-                  is randomly sampled from <a href="https://github.com/nghorbani/human_body_prior">VPoser</a>.
-                  Afterwards, we can obtain the results shown in the videos below.
-                  <hr>
+                     We propose both simulation and real-world dataset, named AM3D-Sim and AM3D-Real. The datasets include RGB images with well-annotated 2D & 3D bounding boxes of vehicles and precise camera pose information. Our dataset organization refers to the database schema of NuScenes, a open-source autonomous driving benchmark. Our dataset can be used with nuscenes-devkit. Our goal is to motivate the monocular 3D object detection from aerial perspective by providing challenging benchmarks with novel difficulties to the 3D perception community. 
+                     </p>
+                     <hr>
                </div>
-               
             </div>
          </div>
-
       </section>
 
 
-      <section id="video" class="">
+      <section id="data" class="">
          <div class="container">
             <div class="row">
                <div class="col-lg-10 mx-auto">
-                  <h2 class="section-title-tc">Video</h2>
-                  <br> <br>
-                  <video width="100%" height="auto"  controls > 
-                     <source type="video/mp4" src="images/results_in_cubes_individual.mp4" /> 
-                 </video>
-               
-                 <br> <br>
-                  <video width="100%" height="auto" controls> 
-                     <source type="video/mp4" src="images/results_in_cubes_all.mp4" /> 
-                 </video>
-                  <!-- <p class="lead text-justify"><a class="publink" >Coming soon ...</a></p> -->
-                  <!-- 16:9 aspect ratio -->
-                  <br> <br>
-                  A demonstration video with music.
-                  If it does not play in Safari, please follow <a href='https://discussions.apple.com/thread/252015568'> this link </a> to change the privacy setting.
-                  <!-- <video width="100%" height="auto" controls> 
-                     <source type="video/mp4" src="images/GAMMA-demo-v3.mp4" /> 
-                 </video> -->
-                 <iframe src="https://drive.google.com/file/d/1AYWgohlXz_j0gkFWceNHM4nJjocieDre/preview" width="100%" height="480" allow="autoplay">
-                 </iframe>
-                  <!-- <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/5DqLWAb37X0" title="[arXiv 2021] The Wanderings of Odysseus in 3D Scenes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                  </div> -->
+                  <h2 class="section-title-tc">AM3D-Sim</h2>
+                  <p class="text-justify">
+                     AM3D-Sim is collected by the co-simulation of CARLA and AirSIM. CARLA simulates complex scenes and traffic flow, and AirSIM simulates drones flying in the scene. To promote data diversity, the flying height is set ranging from 40m to 80m, mostly covering an area of 200m x 200m. In simulation, the annotations could be produced autonomously, so we provide a large and diverse simulation benchmark. It contains 3 large towns, with 48,250 images (41,500/6,750 for training/testing) along with 397,984 3D & 2D bounding boxes (347,588/5,0396 for training/testing).   </p>
+                  <hr>
+
+                  <h3>Sensor Setup</h3>
+                  <p class="text-justify">
+                  In the UAV swarm, Each UAV is equipped with 5 RGB cameras in 5 directions and 5 semantic cameras collecting semantic ground truth for RGB cameras.<br>
+                  - 90° horizontal FoV<br>
+                  - 1 bird's eye view camera and 4 cameras facing forward, backward, right, and left with a pitch degree of -45◦<br>
+                  - image size: 800x450 pixels<br>
+                  </p>
+                  <p><img class="img-fluid" alt="teaser" width="50%" src="images/sensor.png"></p>
+                  <hr>
+                  
+                  <h3>Simulation Camera Data</h3>
+                  <div class="row">
+                     <div class="col-md-4">
+                     <img src="images/sample_fig/CAM_FRONT_id_0.png" alt="agent_0" style="width:90%">
+                     <figcaption>Image_0</figcaption>
+                     </div>
+                     <div class="col-md-4">
+                     <img src="images/sample_fig/CAM_FRONT_id_1.png" alt="agent_1" style="width:90%">
+                     <figcaption>Image_1</figcaption>
+                     </div>
+                     <div class="col-md-4">
+                     <img src="images/sample_fig/CAM_FRONT_id_2.png" alt="agent_2" style="width:90%">
+                     <figcaption>Image_2</figcaption>
+                     </div>
+                  </div>
+                  <br><br>
+                  <hr>
+
+                  <h3>Bounding boxes</h3>
+                  <p class="text-justify">
+                  3D bounding boxes of vehicles are recorded at the same moment with images, including location (x, y, z), rotation (w, x, y, z in quaternion) in the global coordinate and their length, width and height. <br>
+                  To specifically address the occlusion issue, we also provide a binary label for the occlusion status of each bounding box.
+                  </p>
+                  <div class="row">
+                     <div class="col-md-4">
+                     <img src="images/sample_fig/CAM_FRONT_id_0_4.png" alt="agent_0" style="width:90%">
+                     <figcaption>Image_0</figcaption>
+                     </div>
+                     <div class="col-md-4">
+                     <img src="images/sample_fig/CAM_FRONT_id_1_4.png" alt="agent_1" style="width:90%">
+                     <figcaption>Image_1</figcaption>
+                     </div>
+                     <div class="col-md-4">
+                     <img src="images/sample_fig/CAM_FRONT_id_2_4.png" alt="agent_2" style="width:90%">
+                     <figcaption>Image_2</figcaption>
+                     </div>
+                  </div>
+                  <br><br>
+                  <hr>
+
+                  
+                  <h2 class="section-title-tc">AM3D-Real</h2>
+                  <p class="text-justify">
+                     AM3D-Real is collected with DJI Matrice 300 RTK flying over the campus. The drone is equipped with a well-aligned LiDAR and an RGB camera. We annotate the 3D bounding boxes in the 3D point clouds collected by the LiDAR and get the 2D boxes by projecting the 3D boxes back to the image according to the calibrated camera project matrix. Due to challenging and costly data collecting and labeling, the flying height is relatively lower, about 40m and the dataset size is relatively smaller. It contains 1,012 images (919/93 for training/testing) along with 33,083 3D & 2D bounding boxes (31,668/1,415 for training/testing).   
+                  <hr>
+                  
+                  <h3>Real-world Camera Data</h3>
+                  <div class="row">
+                     <div class="col-md-6">
+                     <img src="images/Real_fig/RealImage1.png" alt="image_0" style="width:90%">
+                     <figcaption>Image_0</figcaption>
+                     </div>
+                     <div class="col-md-6">
+                     <img src="images/Real_fig/RealImage2.png" alt="image_1" style="width:90%">
+                     <figcaption>Image_1</figcaption>
+                     </div>
+                  </div>
+                  <br><br>
+                  <hr>
+
+                  <h3>Real-world LIDAR Data</h3>
+                  <div class="row">
+                     <div class="col-md-10">
+                        <img src="images/Real_fig/3D_PointClouds.png" alt="3D point clouds" style="width:90%">
+                        <figcaption>3D point clouds and 3D boxes</figcaption>
+                        </div>
+                  </div>
+                  <br><br>
+                  <hr>
+
+                  
+                  <h3>Bounding boxes</h3>
+                  <p class="text-justify">
+                  3D bounding boxes of vehicles are annotated in the 3D point clouds captured by the LIDAR, and then projected to the 2D bounding boxes in the 2D images. 3D boxes including location (x, y, z), rotation (w, x, y, z in quaternion) in the global coordinate and their length, width and height. <br>
+                  To specifically address the occlusion issue, we also provide a binary label for the occlusion status of each bounding box.
+                  </p>
+                  <div class="row">
+                     <div class="col-md-6">
+                     <img src="images/Real_fig/RealAnnotation1.png" alt="image_0" style="width:90%">
+                     <figcaption>Image_0</figcaption>
+                     </div>
+                     <div class="col-md-6">
+                     <img src="images/Real_fig/RealAnnotation2.png" alt="image_1" style="width:90%">
+                     <figcaption>Image_1</figcaption>
+                     </div>
+                  </div>
+                  <br><br>
+                  <hr>
+
 
                </div>
             </div>
@@ -180,36 +222,31 @@
 
 
 
-      <section id="pubs" class="">
+      <section id="tutorial" class="">
          <div class="container">
             <div class="row">
                <div class="col-lg-10 mx-auto">
-                  <h2 class="section-title-tc">Citation</h2>
+                  <h2 class="section-title-tc">Tutorial</h2>
                   <br>
-                  Yan Zhang,  Siyu Tang<br>
-                  <a class="publink" target="_blank" href="https://drive.google.com/file/d/1FgKHlwehR8RGZuaW5syWn7DP8E5UQz1b/view"><b>
-                  The Wanderings of Odysseus in 3D Scenes</b><br></a>
-                    CVPR, 2022
-                  <br><br>
-<pre style="display: block; background-color: #f5f5f5; border: 1px solid #ccc; border-radius: 4px">
-@misc{zhang2021wanderings,
-    title={The Wanderings of Odysseus in 3D Scenes},
-    author={Zhang, Yan and Tang, Siyu},
-    booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-    year={2022},
-}</pre>
+                  <p class="text-justify">
+                  The dataset is organized in a similar way with the widelyused autonomous driving dataset, nuScenes; so it can be used directly with the well-established nuScenes-devkit.
+                  </p><br>
+                  The tutorial could be found <a href="">here</a>.
+                  <div class="img-wide text-center">
+                     <!-- <p><img class="img-fluid" alt="teaser" src="https://via.placeholder.com/1500x600"></p> -->
+                     <p><img class="img-fluid" alt="teaser" width="80%" src="images/tutorial.png"></p>
+                     </div>
                </div>
             </div>
          </div>
       </section>
 
-      <section id="acknowledgement" class="">
+      <section id="download" class="">
          <div class="container">
             <div class="row">
                <div class="col-lg-10 mx-auto">
-                  <h2 class="section-title-tc">Acknowledgement</h2>
-                  We appreciate <a href="https://gramaziokohler.arch.ethz.ch">Gramazio Kohler Research</a> to provide architecture CAD models for experiments.
-                  Visualizations of body motions are largely based on <a href="https://smpl-x.is.tue.mpg.de">the SMPL-X blender add-on</a>.
+                  <h2 class="section-title-tc">Download</h2>
+                  <a href="">Download</a>
             </div>
          </div>
       </section>
@@ -221,52 +258,7 @@
                   <h2 class="section-title-tc">Team</h2>
                   <div class="row">
 
-                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                        <div class="mainflip">
-                              <div class="card">
-                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="images/avatars/cropped/yan.jpg" alt="card image"></p>
-                                    <h4 class="card-title">Yan <br> Zhang</h4>
-                                    <ul class="list-inline">
-                                      <li class="list-inline-item">
-                                         <a class="social-icon text-xs-center" target="_blank" href="https://twitter.com/cnsdqzyz">
-                                         <i class="fa fa-twitter"></i>
-                                         </a>
-                                      </li>
-                                       <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.linkedin.com/in/yan-zhang-3119b11a/">
-                                          <i class="fa fa-linkedin"></i>
-                                          </a>
-                                       </li>
-                                    </ul>
-                                 </div>
-                              </div>
-                        </div>
-                     </div>
-
-
-                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                        <div class="mainflip">
-                              <div class="card">
-                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="images/avatars/cropped/siyu.jpg" alt="card image"></p>
-                                    <h4 class="card-title">Siyu <br> Tang</h4>
-                                    <ul class="list-inline">
-                                      <li class="list-inline-item">
-                                         <a class="social-icon text-xs-center" target="_blank" href="https://twitter.com/SiyuTang3">
-                                         <i class="fa fa-twitter"></i>
-                                         </a>
-                                      </li>
-                                       <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.linkedin.com/in/siyu-tang-06875324/">
-                                          <i class="fa fa-linkedin"></i>
-                                          </a>
-                                       </li>
-                                    </ul>
-                                 </div>
-                              </div>
-                        </div>
-                     </div>
+                     
                   </div>
                </div>
             </div>
