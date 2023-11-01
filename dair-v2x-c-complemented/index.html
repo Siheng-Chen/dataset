@@ -109,17 +109,24 @@
                   </div>
 
                   <h5>Step 1: Vehicle side annotations</h5>
-                  replace <code>YOUR_DAIR_V2X_C_PATH/cooperative-vehicle-infrastructure/vehicle-side/label/lidar</code> with provided <code>new_labels/vehicle-side_label/lidar</code>.
                   <div class="img-wide text-center">
                      <!-- <p><img class="img-fluid" alt="teaser" src="https://via.placeholder.com/1500x600"></p> -->
                      <p><img class="img-fluid" alt="teaser" width="40%" src="images/veh_side_label.jpg"></p>
                   </div>
+                  - rename <code>YOUR_DAIR_V2X_C_PATH/cooperative-vehicle-infrastructure/vehicle-side/label/lidar</code> to <code>YOUR_DAIR_V2X_C_PATH/cooperative-vehicle-infrastructure/vehicle-side/label/lidar_backup</code> 
+                  <br><br>
+                  - put <code>new_labels/vehicle-side_label/lidar</code> to <code>YOUR_DAIR_V2X_C_PATH/cooperative-vehicle-infrastructure/vehicle-side/label/lidar</code>.
+                  <br><br>
+                  
                   <h5>Step 2: Cooperative annotations</h5>
-                  replace <code>YOUR_DAIR_V2X_C_PATH/cooperative-vehicle-infrastructure/cooperative/label_world</code> with provided <code>new_labels/cooperative_label/lidar_world</code>.
                   <div class="img-wide text-center">
                      <!-- <p><img class="img-fluid" alt="teaser" src="https://via.placeholder.com/1500x600"></p> -->
                      <p><img class="img-fluid" alt="teaser" width="40%" src="images/cooperative_label.jpg"></p>
                   </div>
+                  - rename <code>YOUR_DAIR_V2X_C_PATH/cooperative-vehicle-infrastructure/cooperative/label_world</code> to <code>YOUR_DAIR_V2X_C_PATH/cooperative-vehicle-infrastructure/cooperative/label_world_backup</code>
+                  <br><br>
+                  - put <code>new_labels/cooperative_label/label_world</code> to <code>YOUR_DAIR_V2X_C_PATH/cooperative-vehicle-infrastructure/cooperative/label_world</code>.
+                  <br><br>
                   
                   <h5>Step 3 (optional): individual splits</h5>
                   put provided <code>train.json</code> and <code>val.json</code> under <code>YOUR_DAIR_V2X_C_PATH/cooperative-vehicle-infrastructure/</code>. These are just individual splits from <a href="https://github.com/AIR-THU/DAIR-V2X/blob/main/data/split_datas/cooperative-split-data.json">official splits</a>. Notice that the original train split contains one frame (vehicle frame id "002234") without infrastructure files, so we omit it in `train.json`. 
